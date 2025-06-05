@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Pokémons</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Generador de Pokémon</h1>
+    
+    <div class="contenedor-tipos">
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="steel" id="acero">Acero</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="water" id="agua">Agua</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="bug" id="bicho">Bicho</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="dragon" id="dragon">Dragón</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="electric" id="electrico">Eléctrico</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="ghost" id="fantasma">Fantasma</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="fire" id="fuego">Fuego</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="fairy" id="hada">Hada</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="ice" id="hielo">Hielo</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="fighting" id="lucha">Lucha</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="normal" id="normal">Normal</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="grass" id="planta">Planta</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="psychic" id="psiquico">Psíquico</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="rock" id="roca">Roca</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="dark" id="siniestro">Siniestro</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="ground" id="tierra">Tierra</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="poison" id="veneno">Veneno</label>
+        <label class="opcion-tipo"><input type="radio" name="tipo" value="flying" id="volador">Volador</label>
+    </div>
+
+    <button class="boton-generar" id="boton">Generar Pokémon</button>
+    <div class="mensaje" id="mensaje"></div>
+    
+    <div class="tarjeta-pokemon" id="tarjeta-pokemon">
+        <img class="imagen-pokemon" id="imagen-pokemon" src="" alt="Pokémon">
+        <h2 id="nombre-pokemon">?</h2>
+        <div class="tipos-pokemon" id="tipos-pokemon"></div>
+        
+        <div class="detalles">
+            <div>
+                <div>Altura</div>
+                <div id="altura-pokemon">?</div>
+            </div>
+            <div>
+                <div>Peso</div>
+                <div id="peso-pokemon">?</div>
+            </div>
+        </div>
+        
+        <div class="habilidades">
+            <h3>Habilidades</h3>
+            <div id="habilidades-pokemon"></div>
+        </div>
+    </div>
+
+    <script src="poke.js"></script>
+</body>
+</html>
