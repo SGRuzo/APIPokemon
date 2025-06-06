@@ -29,12 +29,9 @@ let habilidadesPokemon = document.getElementById('habilidades-pokemon');
 
 
 let coloresTipo = {
-        steel: '#B8B8D0', water: '#6890F0', bug: '#A8B820',
-        dragon: '#7038F8', electric: '#F8D030', ghost: '#705898',
-        fire: '#F08030', fairy: '#EE99AC', ice: '#98D8D8',
-        fighting: '#C03028', normal: '#A8A878', grass: '#78C850',
-        psychic: '#F85888', rock: '#B8A038', dark: '#705848',
-        ground: '#E0C068', poison: '#A040A0', flying: '#A890F0'
+        steel: '#B8B8D0', water: '#6890F0', bug: '#A8B820', dragon: '#7038F8', electric: '#F8D030', ghost: '#705898',
+        fire: '#F08030', fairy: '#EE99AC', ice: '#98D8D8', fighting: '#C03028', normal: '#A8A878', grass: '#78C850',
+        psychic: '#F85888', rock: '#B8A038', dark: '#705848', ground: '#E0C068', poison: '#A040A0', flying: '#A890F0'
     };
 
 
@@ -61,19 +58,13 @@ let coloresTipo = {
 
             fetch(`https://pokeapi.co/api/v2/type/${tipoSeleccionado}`)
                 .then(respuestaT)
-                .catch(error => {
-                    console.error('Error:', error);
-                    mensaje.textContent = 'Intenta de nuevo.';
-                });
+                .catch(error);
         }
 
     function respuestaT(respuestat) {
         return respuestat.json()
             .then(datos)
-            .catch(error => {
-                console.error('Error:', error);
-                mensaje.textContent = 'Intenta de nuevo.';
-            });
+            .catch(error);
     }
 
         function datos(datos) {
@@ -81,20 +72,14 @@ let coloresTipo = {
             const pokemonAleatorio = listaPokemon[Math.floor(Math.random() * listaPokemon.length)].pokemon;
             return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonAleatorio.name}`)
                 .then(respuestaD)
-                .catch(error => {
-                    console.error('Error:', error);
-                    mensaje.textContent = 'Intenta de nuevo.';
-                });
+                .catch(error);
         }
 
         function respuestaD(respuestad) {
+            mensaje.style.display = 'none';
             return respuestad.json()
                 .then(mostrarPokemon)
-                .catch(error => {
-                    console.error('Error:', error);
-                    mensaje.textContent = '¡Error al cargar! Intenta de nuevo.';
-                    mensaje.style.color = '#FF0000';
-                });
+                .catch(error);
         }
 
         function mostrarPokemon(datosPokemon) {
@@ -131,4 +116,9 @@ let coloresTipo = {
             }
 
             tarjetaPokemon.style.display = 'block';
+        }
+
+        function error(error){
+            console.error('Error:', error);
+            mensaje.textContent = 'Intenta de nuevo.';
         }
